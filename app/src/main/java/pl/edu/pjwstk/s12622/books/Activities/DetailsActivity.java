@@ -1,6 +1,7 @@
 package pl.edu.pjwstk.s12622.books.Activities;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.edu.pjwstk.s12622.books.Database.ExampleDBHelper;
 import pl.edu.pjwstk.s12622.books.R;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -37,6 +39,8 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView titleText, publisherText, descriptionText, authorText;
     private ImageView bookThumbnail;
     private Context context;
+    private Button favoriteButton;
+    ExampleDBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,7 @@ public class DetailsActivity extends AppCompatActivity {
         descriptionText = (TextView)findViewById(R.id.bookDescription);
         bookThumbnail = (ImageView)findViewById(R.id.bookThumbnail);
         authorText = (TextView)findViewById(R.id.bookAuthor);
+        favoriteButton = (Button)findViewById(R.id.favoritesButton);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -65,6 +70,17 @@ public class DetailsActivity extends AppCompatActivity {
                 Log.d("myTag", extras.getString("description"));
                 Log.d("myTag", extras.getString("thumbnail"));
 
+                favoriteButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        dbHelper = new ExampleDBHelper(getApplicationContext());
+
+                        dbHelper.insertData(
+                                titleText.getText().toString(),
+                                authorText.getText().toString(),
+                                publisherText.getText().toString(),
+                                descriptionText.getText().toString());
+                    }
+                });
 
             }
             catch (Exception e) {

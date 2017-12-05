@@ -65,7 +65,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/favoritesButton"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -105,7 +105,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.791"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button5"
+            app:layout_constraintTop_toBottomOf="@+id/favoritesButton"
             app:layout_constraintVertical_bias="0.107">
 
             <LinearLayout
@@ -117,10 +117,18 @@
                     android:id="@+id/bookDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
                     android:lineSpacingExtra="8sp"
                     android:text=""
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="340dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.556" />
             </LinearLayout>
         </ScrollView>
 

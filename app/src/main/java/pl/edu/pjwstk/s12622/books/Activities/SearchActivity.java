@@ -1,16 +1,14 @@
 package pl.edu.pjwstk.s12622.books.Activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
+import android.database.Cursor;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
@@ -25,15 +23,11 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.List;
 
 import pl.edu.pjwstk.s12622.books.Adapters.BookAdapter;
 import pl.edu.pjwstk.s12622.books.Classes.CheckNetwork;
+import pl.edu.pjwstk.s12622.books.Database.ExampleDBHelper;
 import pl.edu.pjwstk.s12622.books.Models.Book;
 import pl.edu.pjwstk.s12622.books.Models.BookResponse;
 import pl.edu.pjwstk.s12622.books.R;
@@ -45,6 +39,7 @@ public class SearchActivity extends AppCompatActivity{
     private ArrayList<Book> booksList = new ArrayList<>();
     private ListView listView;
     private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,18 +58,13 @@ public class SearchActivity extends AppCompatActivity{
         context = getApplicationContext();
         listView = (ListView)findViewById(R.id.booksListView) ;
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
-
         queue = Volley.newRequestQueue(context);
 
         searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-////                        getBooksList(query);
-//                        BookAdapter adapter = new BookAdapter(context, R.layout.itemlistrow, booksList);
-//                        listView.setAdapter(adapter);
                 progressBar.setVisibility(View.VISIBLE);
                 getBooksList(query);
-//                listView.setAdapter(adapter);
                 return false;
 
             }
@@ -100,22 +90,21 @@ public class SearchActivity extends AppCompatActivity{
                         }
                 if (booksList.get(position).volumeInfo.imageLinks == null)
                         {
-                        i.putExtra("thumbnail", "https://i.ebayimg.com/images/g/BTgAAOSwPcVVtjiQ/s-l300.jpg");
+                            i.putExtra("thumbnail", getString(R.string.default_thumbnail));
                         }
                 i.putExtra("description", booksList.get(position).volumeInfo.description);
 
                 startActivity(i);
             }
         });
+
+
     }
-
-
-
 
     private void getBooksList(final String q) {
         booksList.clear();
         StringRequest stringRequest = new StringRequest
-                (Request.Method.GET, "https://www.googleapis.com/books/v1/volumes?q=" + q+"&maxResults=10",
+                (Request.Method.GET, getString(R.string.api_query) + q+"&maxResults=10",
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
