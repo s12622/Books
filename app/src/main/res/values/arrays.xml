@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pieces">
+        <item>Testowy 1</item>
+        <item>Testowy 2</item>
+        <item>Testowy 3</item>
+        <item>Testowy 4</item>
+        <item>Testowy 5</item>
+        <item>Testowy 6</item>
+        <item>Testowy 1</item>
+        <item>Testowy 2</item>
+        <item>Testowy 3</item>
+        <item>Testowy 4</item>
+        <item>Testowy 5</item>
+        <item>Testowy 6</item>
+        <item>Testowy 1</item>
+        <item>Testowy 2</item>
+        <item>Testowy 3</item>
+        <item>Testowy 4</item>
+        <item>Testowy 5</item>
+        <item>Testowy 6</item>
+        <item>Testowy 1</item>
+        <item>Testowy 2</item>
+        <item>Testowy 3</item>
+        <item>Testowy 4</item>
+        <item>Testowy 5</item>
+        <item>Testowy 6</item>
+    </string-array>
+
+    <string-array name="tests">
+        <item>7fAtDwAAQBAJ</item>
+        <item>GJgbW9c9mpwC</item>
+        <item>PUSwBAAAQBAJ</item>
+        <item>WpkWErgxgssC</item>
+        <item>7fAtDwAAQBAJ</item>
+        <item>GJgbW9c9mpwC</item>
+        <item>PUSwBAAAQBAJ</item>
+        <item>WpkWErgxgssC</item>
+        <item>7fAtDwAAQBAJ</item>
+        <item>GJgbW9c9mpwC</item>
+        <item>PUSwBAAAQBAJ</item>
+        <item>WpkWErgxgssC</item>
+        <item>7fAtDwAAQBAJ</item>
+        <item>GJgbW9c9mpwC</item>
+        <item>PUSwBAAAQBAJ</item>
+        <item>WpkWErgxgssC</item>
+    </string-array>
+
+
+    <string-array name="descriptions">
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque at mauris in egestas. Duis tincidunt consectetur leo a molestie. In faucibus interdum metus, a consectetur massa gravida eget. Praesent sagittis risus arcu, ac bibendum lectus tempus at. Ut molestie blandit nisl id faucibus. </item>
+        <item>Praesent sagittis risus arcu, ac bibendum lectus tempus at. Ut molestie blandit nisl id faucibus. Aliquam suscipit faucibus varius. Aliquam faucibus lectus nibh, vel volutpat orci congue sed. Mauris eleifend lectus sit amet justo finibus, et interdum urna malesuada</item>
+        <item>Aliquam suscipit faucibus varius. Aliquam faucibus lectus nibh, vel volutpat orci congue sed. Mauris eleifend lectus sit amet justo finibus, et interdum urna malesuada</item>
+        <item>Praesent sagittis risus arcu, ac bibendum lectus tempus at. Ut molestie blandit nisl id faucibus. Aliquam suscipit faucibus varius. Aliquam faucibus lectus nibh, vel volutpat orci congue sed. Mauris eleifend lectus sit amet justo finibus, et interdum urna malesuada</item>
+        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque at mauris in egestas. Duis tincidunt consectetur leo a molestie. In faucibus interdum metus, a consectetur massa gravida eget. Praesent sagittis risus arcu, ac bibendum lectus tempus at. Ut molestie blandit nisl id faucibus. </item>
+        <item>Aliquam suscipit faucibus varius. Aliquam faucibus lectus nibh, vel volutpat orci congue sed. Mauris eleifend lectus sit amet justo finibus, et interdum urna malesuada</item>
+
+    </string-array>
+
+</resources>
