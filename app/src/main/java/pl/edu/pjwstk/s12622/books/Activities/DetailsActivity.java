@@ -79,6 +79,8 @@ public class DetailsActivity extends AppCompatActivity {
                                 authorText.getText().toString(),
                                 publisherText.getText().toString(),
                                 descriptionText.getText().toString());
+
+                        Toast.makeText(context, "Added to favorites", Toast.LENGTH_SHORT).show();
                     }
                 });
 
